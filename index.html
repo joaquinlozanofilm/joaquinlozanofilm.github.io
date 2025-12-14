@@ -3,174 +3,180 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joaquín Lozano - Filmmaker</title>
+    <title>Joaquín Lozano - Visual Storyteller</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 
     <style>
-        /* --- ESTÉTICA MIAMI VICE / SYNTHWAVE --- */
+        /* --- ESTÉTICA DARK FANTASY / JOHN HOWE --- */
         :root {
-            --neon-pink: #ff2a6d;
-            --neon-blue: #05d9e8;
-            --bg-dark: #120428; /* Violeta muy oscuro */
-            --bg-light: #1f1a3d; /* Azul noche */
-            --text-main: #e0e0e0;
+            --color-bg: #0c0c0c;       /* Negro casi absoluto */
+            --color-paper: #1a1a1a;    /* Gris piedra oscura para las cajas */
+            --color-gold: #8a7852;     /* Oro viejo/bronce desaturado */
+            --color-text: #dcdcdc;     /* Blanco hueso */
+            --color-accent: #4a0404;   /* Rojo sangre muy oscuro (sutil) */
         }
 
         body {
-            /* Degradado de fondo nocturno */
-            background: linear-gradient(to bottom, var(--bg-dark), var(--bg-light));
-            /* Patrón de "GRID" ochentero superpuesto */
-            background-image: 
-                linear-gradient(rgba(5, 217, 232, 0.1) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(5, 217, 232, 0.1) 1px, transparent 1px);
-            background-size: 50px 50px; /* Tamaño de los cuadrados de la reja */
+            background-color: var(--color-bg);
+            /* Textura sutil de ruido para que no sea plano (simula papel viejo o piedra) */
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
             
-            color: var(--text-main);
-            font-family: 'Montserrat', sans-serif; /* Fuente limpia para leer */
+            color: var(--color-text);
+            font-family: 'Cormorant Garamond', serif; /* Fuente tipo libro antiguo */
+            font-size: 1.2rem;
             line-height: 1.6;
             margin: 0;
-            padding: 20px;
+            padding: 40px 20px;
             min-height: 100vh;
         }
 
         .container {
             max-width: 900px;
             margin: 0 auto;
-            background-color: rgba(31, 26, 61, 0.6); /* Fondo semitransparente para el contenido */
-            padding: 40px;
-            border-radius: 15px;
-            border: 1px solid rgba(5, 217, 232, 0.2);
-            box-shadow: 0 0 30px rgba(0,0,0,0.5);
+            border-top: 2px solid var(--color-gold);
+            border-bottom: 2px solid var(--color-gold);
+            padding: 60px 20px;
+            position: relative;
         }
 
-        /* HEADER Y NOMBRE CON NEÓN */
+        /* HEADER */
         header {
-            margin-bottom: 60px;
             text-align: center;
-            border-bottom: 3px solid var(--neon-pink);
-            padding-bottom: 30px;
-            /* Sombra brillante debajo de la línea rosa */
-            box-shadow: 0 10px 20px -10px rgba(255, 42, 109, 0.5); 
+            margin-bottom: 80px;
         }
         
-        /* Estilo para tu nombre */
-        h1.neon-title {
-            font-family: 'Audiowide', cursive; /* Fuente retro futurista */
-            font-size: 4em;
-            margin: 0;
-            color: #fff;
+        h1.epic-title {
+            font-family: 'Cinzel', serif; /* Fuente épica estilo LOTR */
+            font-size: 3.5rem;
+            letter-spacing: 4px;
+            color: var(--color-gold);
             text-transform: uppercase;
-            /* EL EFECTO DE DOBLE NEÓN (Rosa y Azul) */
-            text-shadow: 
-                0 0 5px #fff,
-                0 0 10px #fff,
-                0 0 20px var(--neon-pink),
-                0 0 40px var(--neon-pink),
-                0 0 60px var(--neon-blue);
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px rgba(0,0,0,0.8);
+            border-bottom: 1px solid #333;
+            display: inline-block;
+            padding-bottom: 10px;
         }
 
         .subtitle {
-            font-family: 'Audiowide', cursive;
-            color: var(--neon-blue);
-            letter-spacing: 2px;
-            margin-top: 10px;
-            text-shadow: 0 0 10px var(--neon-blue);
+            font-family: 'Cinzel', serif;
+            font-size: 0.9rem;
+            color: #888;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-top: 15px;
         }
 
         /* SECCIONES */
         h2 {
-            font-family: 'Audiowide', cursive;
-            color: var(--neon-blue);
-            text-transform: uppercase;
-            margin-top: 0;
-            /* Brillo azul sutil en los títulos */
-            text-shadow: 0 0 8px var(--neon-blue);
+            font-family: 'Cinzel', serif;
+            color: var(--color-text);
+            border-left: 3px solid var(--color-accent);
+            padding-left: 15px;
+            font-size: 1.8rem;
+            margin-bottom: 30px;
         }
 
         .bio {
-            margin-bottom: 60px;
-            font-size: 1.1em;
-            border-left: 4px solid var(--neon-blue);
-            padding-left: 20px;
+            max-width: 700px;
+            margin: 0 auto 80px auto;
+            text-align: center;
+            font-style: italic;
+            color: #aaa;
         }
 
-        /* PORTFOLIO GRID RENOVADO */
+        /* PORTFOLIO GRID */
         .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
         }
 
         .project-card {
-            background-color: rgba(255, 255, 255, 0.05); /* Efecto cristal */
-            border: 2px solid var(--neon-blue); /* Borde azul neón */
+            background-color: var(--color-paper);
+            border: 1px solid #333;
             padding: 15px;
-            transition: all 0.4s ease;
-            cursor: pointer;
+            transition: all 0.5s ease;
             position: relative;
-            box-shadow: 0 0 15px rgba(5, 217, 232, 0.2); /* Resplandor azul suave */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
-        /* HOVER: Efecto al pasar el mouse */
+        /* Efecto al pasar el mouse: se ilumina el borde dorado */
         .project-card:hover {
-            border-color: var(--neon-pink); /* Cambia a rosa */
-            box-shadow: 0 0 25px var(--neon-pink), inset 0 0 20px rgba(255, 42, 109, 0.3); /* Resplandor rosa intenso */
-            transform: translateY(-10px) scale(1.02); /* Flota hacia arriba */
+            border-color: var(--color-gold);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.8);
+        }
+
+        .project-image-container {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            border-bottom: 1px solid #333;
+            margin-bottom: 15px;
+            position: relative;
         }
 
         .project-image {
             width: 100%;
-            height: 180px;
+            height: 100%;
             object-fit: cover;
-            margin-bottom: 15px;
-            border-bottom: 1px solid var(--neon-pink);
-            /* Ya no usamos grayscale, queremos color */
+            /* Filtro inicial: Sepia oscuro y poco contraste (estilo pintura antigua) */
+            filter: sepia(40%) grayscale(60%) contrast(80%) brightness(80%); 
+            transition: transform 0.8s ease, filter 0.5s ease;
+        }
+
+        /* Al pasar el mouse, la imagen cobra vida (full color) */
+        .project-card:hover .project-image {
+            filter: sepia(0%) grayscale(0%) contrast(100%) brightness(100%);
+            transform: scale(1.05); /* Zoom muy lento y suave */
         }
 
         .project-title {
-            font-family: 'Audiowide', cursive;
-            color: #fff;
-            font-size: 1.2em;
+            font-family: 'Cinzel', serif;
+            color: var(--color-gold);
+            font-size: 1.3rem;
             display: block;
             margin-bottom: 5px;
+            letter-spacing: 1px;
         }
 
         .tags {
-            font-size: 0.8em;
-            color: var(--neon-blue);
-            font-weight: bold;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 0.95rem;
+            color: #666;
+            text-transform: uppercase;
             letter-spacing: 1px;
         }
 
         /* FOOTER */
         footer {
-            margin-top: 80px;
+            margin-top: 100px;
             text-align: center;
-            font-size: 0.9em;
-            color: rgba(255, 255, 255, 0.6);
-            border-top: 1px solid var(--neon-blue);
-            padding-top: 20px;
+            font-size: 0.9rem;
+            color: #444;
+            border-top: 1px solid #222;
+            padding-top: 30px;
         }
         
         a.contact-link { 
-            color: var(--neon-pink); 
+            color: var(--color-gold); 
             text-decoration: none;
-            font-weight: bold;
-            text-shadow: 0 0 5px var(--neon-pink);
             transition: 0.3s;
+            border-bottom: 1px dotted var(--color-gold);
         }
         a.contact-link:hover { 
             color: #fff;
-            text-shadow: 0 0 15px var(--neon-pink), 0 0 25px var(--neon-blue);
+            border-bottom: 1px solid #fff;
         }
 
-        /* Ajuste para móviles */
+        /* RESPONSIVE */
         @media (max-width: 600px) {
-            h1.neon-title { font-size: 2.5em; }
-            .container { padding: 20px; }
+            h1.epic-title { font-size: 2.2rem; }
+            .container { padding: 30px 15px; }
         }
 
     </style>
@@ -180,44 +186,52 @@
     <div class="container">
         
         <header>
-            <h1 class="neon-title">JOAQUÍN LOZANO</h1>
-            <div class="subtitle">/// FILMMAKER | GUIONISTA | PRODUCTOR ///</div>
+            <h1 class="epic-title">Joaquín Lozano</h1>
+            <div class="subtitle">Filmmaker & Visual Storyteller</div>
         </header>
 
         <section class="bio">
-            <h2>// 01. Perfil</h2>
             <p>
-                Especializado en narrativa visual con un enfoque técnico sólido. Desde la planificación logística hasta la operación de cámara, busco la fusión entre la estética cinematográfica y la eficiencia de producción.
+                "Explorando la narrativa visual a través de la luz y la sombra. 
+                Especializado en la creación de mundos, guion técnico y la logística de lo imposible."
             </p>
         </section>
 
         <section class="portfolio">
-            <h2>// 02. Proyectos</h2>
+            <h2>Compendium de Obras</h2>
             
             <div class="portfolio-grid">
                 
-                <div class="project-card" onclick="window.open('https://youtube.com', '_blank');">
-                    <img src="https://picsum.photos/seed/rodaje1/400/300" class="project-image" alt="Rodaje Mendoza">
+                <div class="project-card" onclick="window.open('https://youtube.com', '_blank');" style="cursor: pointer;">
+                    <div class="project-image-container">
+                        <img src="https://images.unsplash.com/photo-1519074069444-1ba4fff66d16?q=80&w=600&auto=format&fit=crop" class="project-image" alt="Paisaje Oscuro">
+                    </div>
                     <span class="project-title">Laderas de los Andes</span>
-                    <div class="tags">[PROD] [LOGISTICA] - Mendoza</div>
+                    <div class="tags">Producción · Logística</div>
                 </div>
 
-                <div class="project-card" onclick="window.open('https://vimeo.com', '_blank');">
-                    <img src="https://picsum.photos/seed/corto2/400/300" class="project-image" alt="Cortometraje">
-                    <span class="project-title">Neon Nights (Corto)</span>
-                    <div class="tags">[DIRECCION] [GUION]</div>
+                <div class="project-card" onclick="window.open('#', '_blank');" style="cursor: pointer;">
+                    <div class="project-image-container">
+                        <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e63?q=80&w=600&auto=format&fit=crop" class="project-image" alt="Cinematography">
+                    </div>
+                    <span class="project-title">Sombras del Valle</span>
+                    <div class="tags">Guion · Dirección</div>
                 </div>
 
-                <div class="project-card" onclick="window.open('#', '_blank');">
-                    <img src="https://picsum.photos/seed/brand3/400/300" class="project-image" alt="Publicidad">
-                    <span class="project-title">Spot Comercial Tech</span>
-                    <div class="tags">[CAMARA] [EDICION]</div>
+                <div class="project-card" onclick="window.open('#', '_blank');" style="cursor: pointer;">
+                    <div class="project-image-container">
+                        <img src="https://images.unsplash.com/photo-1535083783855-76462b99c841?q=80&w=600&auto=format&fit=crop" class="project-image" alt="Arte">
+                    </div>
+                    <span class="project-title">Reel 2025</span>
+                    <div class="tags">Edición · Color Grading</div>
                 </div>
 
-                <div class="project-card" onclick="window.open('#', '_blank');">
-                    <img src="https://picsum.photos/seed/reel4/400/300" class="project-image" alt="Showreel">
-                    <span class="project-title">Director's Reel 2025</span>
-                    <div class="tags">[RESUMEN VISUAL]</div>
+                <div class="project-card" onclick="window.open('#', '_blank');" style="cursor: pointer;">
+                    <div class="project-image-container">
+                        <img src="https://images.unsplash.com/photo-1599940824399-b87987ced7bb?q=80&w=600&auto=format&fit=crop" class="project-image" alt="Escritura">
+                    </div>
+                    <span class="project-title">Guiones Técnicos</span>
+                    <div class="tags">Desglose · Pre-producción</div>
                 </div>
 
             </div>
@@ -225,7 +239,8 @@
 
         <footer>
             <p>Contacto: <a href="mailto:tuemail@gmail.com" class="contact-link">tuemail@gmail.com</a></p>
-            <p>Buenos Aires, Argentina. © 2024</p>
+            <br>
+            <p style="opacity: 0.5; font-size: 0.8em;">Buenos Aires, Arg.</p>
         </footer>
 
     </div>
