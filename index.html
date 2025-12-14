@@ -3,96 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - [TU NOMBRE]</title>
+    <title>Joaquín Lozano - Filmmaker</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+
     <style>
-        /* ESTILOS GENERALES (La estética "Terminal") */
+        /* --- ESTÉTICA MIAMI VICE / SYNTHWAVE --- */
+        :root {
+            --neon-pink: #ff2a6d;
+            --neon-blue: #05d9e8;
+            --bg-dark: #120428; /* Violeta muy oscuro */
+            --bg-light: #1f1a3d; /* Azul noche */
+            --text-main: #e0e0e0;
+        }
+
         body {
-            background-color: #111; /* Fondo casi negro */
-            color: #eee;            /* Texto casi blanco */
-            font-family: 'Courier New', Courier, monospace; /* Fuente estilo código */
+            /* Degradado de fondo nocturno */
+            background: linear-gradient(to bottom, var(--bg-dark), var(--bg-light));
+            /* Patrón de "GRID" ochentero superpuesto */
+            background-image: 
+                linear-gradient(rgba(5, 217, 232, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(5, 217, 232, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px; /* Tamaño de los cuadrados de la reja */
+            
+            color: var(--text-main);
+            font-family: 'Montserrat', sans-serif; /* Fuente limpia para leer */
             line-height: 1.6;
             margin: 0;
             padding: 20px;
+            min-height: 100vh;
         }
 
-        /* CONTENEDOR CENTRAL (Para que no se desparrame en pantallas grandes) */
         .container {
-            max-width: 800px;
-            margin: 0 auto; /* Esto centra el contenido */
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: rgba(31, 26, 61, 0.6); /* Fondo semitransparente para el contenido */
+            padding: 40px;
+            border-radius: 15px;
+            border: 1px solid rgba(5, 217, 232, 0.2);
+            box-shadow: 0 0 30px rgba(0,0,0,0.5);
         }
 
-        /* HEADER & ASCII ART */
+        /* HEADER Y NOMBRE CON NEÓN */
         header {
-            margin-bottom: 50px;
-            border-bottom: 1px dashed #555; /* Una línea punteada sutil */
-            padding-bottom: 20px;
+            margin-bottom: 60px;
+            text-align: center;
+            border-bottom: 3px solid var(--neon-pink);
+            padding-bottom: 30px;
+            /* Sombra brillante debajo de la línea rosa */
+            box-shadow: 0 10px 20px -10px rgba(255, 42, 109, 0.5); 
         }
         
-        pre {
-            color: #00ff00; /* Color verde hacker para el logo */
-            font-size: 10px; /* Ajustar según el tamaño de tu ASCII */
-            overflow-x: auto; /* Por si el ASCII es muy ancho en móbiles */
+        /* Estilo para tu nombre */
+        h1.neon-title {
+            font-family: 'Audiowide', cursive; /* Fuente retro futurista */
+            font-size: 4em;
+            margin: 0;
+            color: #fff;
+            text-transform: uppercase;
+            /* EL EFECTO DE DOBLE NEÓN (Rosa y Azul) */
+            text-shadow: 
+                0 0 5px #fff,
+                0 0 10px #fff,
+                0 0 20px var(--neon-pink),
+                0 0 40px var(--neon-pink),
+                0 0 60px var(--neon-blue);
         }
 
-        /* SECCIÓN DE BIO */
+        .subtitle {
+            font-family: 'Audiowide', cursive;
+            color: var(--neon-blue);
+            letter-spacing: 2px;
+            margin-top: 10px;
+            text-shadow: 0 0 10px var(--neon-blue);
+        }
+
+        /* SECCIONES */
+        h2 {
+            font-family: 'Audiowide', cursive;
+            color: var(--neon-blue);
+            text-transform: uppercase;
+            margin-top: 0;
+            /* Brillo azul sutil en los títulos */
+            text-shadow: 0 0 8px var(--neon-blue);
+        }
+
         .bio {
             margin-bottom: 60px;
-        }
-        h2 {
-            text-transform: uppercase;
-            border-left: 5px solid #00ff00; /* Detalle verde al lado del título */
-            padding-left: 10px;
+            font-size: 1.1em;
+            border-left: 4px solid var(--neon-blue);
+            padding-left: 20px;
         }
 
-        /* GRILLA DEL PORTFOLIO (Aquí está la magia visual) */
+        /* PORTFOLIO GRID RENOVADO */
         .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px; /* Espacio entre trabajos */
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
         }
 
         .project-card {
-            border: 1px solid #333;
-            padding: 10px;
-            transition: all 0.3s ease;
+            background-color: rgba(255, 255, 255, 0.05); /* Efecto cristal */
+            border: 2px solid var(--neon-blue); /* Borde azul neón */
+            padding: 15px;
+            transition: all 0.4s ease;
             cursor: pointer;
+            position: relative;
+            box-shadow: 0 0 15px rgba(5, 217, 232, 0.2); /* Resplandor azul suave */
         }
 
+        /* HOVER: Efecto al pasar el mouse */
         .project-card:hover {
-            border-color: #00ff00; /* Se pone verde al pasar el mouse */
-            background-color: #1a1a1a;
+            border-color: var(--neon-pink); /* Cambia a rosa */
+            box-shadow: 0 0 25px var(--neon-pink), inset 0 0 20px rgba(255, 42, 109, 0.3); /* Resplandor rosa intenso */
+            transform: translateY(-10px) scale(1.02); /* Flota hacia arriba */
         }
 
         .project-image {
             width: 100%;
-            height: 150px;
-            background-color: #333; /* Color de fondo mientras carga la imagen */
+            height: 180px;
             object-fit: cover;
-            margin-bottom: 10px;
-            /* FILTRO RETRO: Escala de grises hasta que pasas el mouse */
-            filter: grayscale(100%); 
-            transition: filter 0.3s;
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--neon-pink);
+            /* Ya no usamos grayscale, queremos color */
         }
 
-        .project-card:hover .project-image {
-            filter: grayscale(0%); /* Vuelve a color al pasar el mouse */
+        .project-title {
+            font-family: 'Audiowide', cursive;
+            color: #fff;
+            font-size: 1.2em;
+            display: block;
+            margin-bottom: 5px;
         }
 
         .tags {
             font-size: 0.8em;
-            color: #888;
+            color: var(--neon-blue);
+            font-weight: bold;
+            letter-spacing: 1px;
         }
 
         /* FOOTER */
         footer {
             margin-top: 80px;
             text-align: center;
-            font-size: 0.8em;
-            color: #555;
+            font-size: 0.9em;
+            color: rgba(255, 255, 255, 0.6);
+            border-top: 1px solid var(--neon-blue);
+            padding-top: 20px;
         }
         
-        a { color: #00ff00; text-decoration: none; }
-        a:hover { text-decoration: underline; }
+        a.contact-link { 
+            color: var(--neon-pink); 
+            text-decoration: none;
+            font-weight: bold;
+            text-shadow: 0 0 5px var(--neon-pink);
+            transition: 0.3s;
+        }
+        a.contact-link:hover { 
+            color: #fff;
+            text-shadow: 0 0 15px var(--neon-pink), 0 0 25px var(--neon-blue);
+        }
+
+        /* Ajuste para móviles */
+        @media (max-width: 600px) {
+            h1.neon-title { font-size: 2.5em; }
+            .container { padding: 20px; }
+        }
 
     </style>
 </head>
@@ -101,65 +180,55 @@
     <div class="container">
         
         <header>
-            <pre>
-  _____ _   _    _   _  ____  __  __ ____  ____  ______ 
- |_   _| | | |  | \ | |/ __ \|  \/  |  _ \|  _ \|  ____|
-   | | | | | |  |  \| | |  | | \  / | |_) | |_) | |__   
-   | | | | | |  | . ` | |  | | |\/| |  _ <|  _ <|  __|  
-   | | | |_| |  | |\  | |__| | |  | | |_) | |_) | |____ 
-   |_|  \___/   |_| \_|\____/|_|  |_|____/|____/|______|
-            </pre>
-            <p>> Filmmaker | Guionista | Productor</p>
-            <p>> Buenos Aires, Argentina</p>
+            <h1 class="neon-title">JOAQUÍN LOZANO</h1>
+            <div class="subtitle">/// FILMMAKER | GUIONISTA | PRODUCTOR ///</div>
         </header>
 
         <section class="bio">
-            <h2>01. Sobre Mí</h2>
+            <h2>// 01. Perfil</h2>
             <p>
-                Hola, soy [Tu Nombre]. Me especializo en contar historias visuales con un enfoque técnico y logístico sólido. 
-                <br><br>
-                Desde la planificación de rodajes complejos hasta la operación de cámara, busco fusionar la narrativa con la eficiencia de producción.
+                Especializado en narrativa visual con un enfoque técnico sólido. Desde la planificación logística hasta la operación de cámara, busco la fusión entre la estética cinematográfica y la eficiencia de producción.
             </p>
         </section>
 
         <section class="portfolio">
-            <h2>02. Proyectos Seleccionados</h2>
+            <h2>// 02. Proyectos</h2>
             
             <div class="portfolio-grid">
                 
-                <div class="project-card" onclick="location.href='https://youtube.com/tu-video-1';">
-                    <img src="https://via.placeholder.com/400x300/333/eee?text=Laderas+Andes" class="project-image" alt="Rodaje Mendoza">
-                    <strong>Laderas de los Andes</strong>
+                <div class="project-card" onclick="window.open('https://youtube.com', '_blank');">
+                    <img src="https://picsum.photos/seed/rodaje1/400/300" class="project-image" alt="Rodaje Mendoza">
+                    <span class="project-title">Laderas de los Andes</span>
                     <div class="tags">[PROD] [LOGISTICA] - Mendoza</div>
                 </div>
 
-                <div class="project-card" onclick="location.href='#';">
-                    <img src="https://via.placeholder.com/400x300/333/eee?text=Corto+Ficcion" class="project-image" alt="Cortometraje">
-                    <strong>Nombre del Corto</strong>
-                    <div class="tags">[GUION] [DIRECCION]</div>
+                <div class="project-card" onclick="window.open('https://vimeo.com', '_blank');">
+                    <img src="https://picsum.photos/seed/corto2/400/300" class="project-image" alt="Cortometraje">
+                    <span class="project-title">Neon Nights (Corto)</span>
+                    <div class="tags">[DIRECCION] [GUION]</div>
                 </div>
 
-                <div class="project-card" onclick="location.href='#';">
-                    <img src="https://via.placeholder.com/400x300/333/eee?text=Brand+Content" class="project-image" alt="Publicidad">
-                    <strong>Campaña Xiaomi/Poco</strong>
+                <div class="project-card" onclick="window.open('#', '_blank');">
+                    <img src="https://picsum.photos/seed/brand3/400/300" class="project-image" alt="Publicidad">
+                    <span class="project-title">Spot Comercial Tech</span>
                     <div class="tags">[CAMARA] [EDICION]</div>
                 </div>
 
-                <div class="project-card" onclick="location.href='#';">
-                    <img src="https://via.placeholder.com/400x300/333/eee?text=Reel+2025" class="project-image" alt="Showreel">
-                    <strong>Showreel 2024-2025</strong>
-                    <div class="tags">[RESUMEN]</div>
+                <div class="project-card" onclick="window.open('#', '_blank');">
+                    <img src="https://picsum.photos/seed/reel4/400/300" class="project-image" alt="Showreel">
+                    <span class="project-title">Director's Reel 2025</span>
+                    <div class="tags">[RESUMEN VISUAL]</div>
                 </div>
 
             </div>
         </section>
 
         <footer>
-            <p>Contacto: <a href="mailto:tuemail@gmail.com">tuemail@gmail.com</a></p>
-            <p>--- FIN DE TRANSMISIÓN ---</p>
+            <p>Contacto: <a href="mailto:tuemail@gmail.com" class="contact-link">tuemail@gmail.com</a></p>
+            <p>Buenos Aires, Argentina. © 2024</p>
         </footer>
 
     </div>
 
 </body>
-   </html>
+</html>
