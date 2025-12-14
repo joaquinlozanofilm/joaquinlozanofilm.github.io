@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - [TU NOMBRE]</title>
+    <style>
+        /* ESTILOS GENERALES (La estética "Terminal") */
+        body {
+            background-color: #111; /* Fondo casi negro */
+            color: #eee;            /* Texto casi blanco */
+            font-family: 'Courier New', Courier, monospace; /* Fuente estilo código */
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* CONTENEDOR CENTRAL (Para que no se desparrame en pantallas grandes) */
+        .container {
+            max-width: 800px;
+            margin: 0 auto; /* Esto centra el contenido */
+        }
+
+        /* HEADER & ASCII ART */
+        header {
+            margin-bottom: 50px;
+            border-bottom: 1px dashed #555; /* Una línea punteada sutil */
+            padding-bottom: 20px;
+        }
+        
+        pre {
+            color: #00ff00; /* Color verde hacker para el logo */
+            font-size: 10px; /* Ajustar según el tamaño de tu ASCII */
+            overflow-x: auto; /* Por si el ASCII es muy ancho en móbiles */
+        }
+
+        /* SECCIÓN DE BIO */
+        .bio {
+            margin-bottom: 60px;
+        }
+        h2 {
+            text-transform: uppercase;
+            border-left: 5px solid #00ff00; /* Detalle verde al lado del título */
+            padding-left: 10px;
+        }
+
+        /* GRILLA DEL PORTFOLIO (Aquí está la magia visual) */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px; /* Espacio entre trabajos */
+        }
+
+        .project-card {
+            border: 1px solid #333;
+            padding: 10px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .project-card:hover {
+            border-color: #00ff00; /* Se pone verde al pasar el mouse */
+            background-color: #1a1a1a;
+        }
+
+        .project-image {
+            width: 100%;
+            height: 150px;
+            background-color: #333; /* Color de fondo mientras carga la imagen */
+            object-fit: cover;
+            margin-bottom: 10px;
+            /* FILTRO RETRO: Escala de grises hasta que pasas el mouse */
+            filter: grayscale(100%); 
+            transition: filter 0.3s;
+        }
+
+        .project-card:hover .project-image {
+            filter: grayscale(0%); /* Vuelve a color al pasar el mouse */
+        }
+
+        .tags {
+            font-size: 0.8em;
+            color: #888;
+        }
+
+        /* FOOTER */
+        footer {
+            margin-top: 80px;
+            text-align: center;
+            font-size: 0.8em;
+            color: #555;
+        }
+        
+        a { color: #00ff00; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <header>
+            <pre>
+  _____ _   _    _   _  ____  __  __ ____  ____  ______ 
+ |_   _| | | |  | \ | |/ __ \|  \/  |  _ \|  _ \|  ____|
+   | | | | | |  |  \| | |  | | \  / | |_) | |_) | |__   
+   | | | | | |  | . ` | |  | | |\/| |  _ <|  _ <|  __|  
+   | | | |_| |  | |\  | |__| | |  | | |_) | |_) | |____ 
+   |_|  \___/   |_| \_|\____/|_|  |_|____/|____/|______|
+            </pre>
+            <p>> Filmmaker | Guionista | Productor</p>
+            <p>> Buenos Aires, Argentina</p>
+        </header>
+
+        <section class="bio">
+            <h2>01. Sobre Mí</h2>
+            <p>
+                Hola, soy [Tu Nombre]. Me especializo en contar historias visuales con un enfoque técnico y logístico sólido. 
+                <br><br>
+                Desde la planificación de rodajes complejos hasta la operación de cámara, busco fusionar la narrativa con la eficiencia de producción.
+            </p>
+        </section>
+
+        <section class="portfolio">
+            <h2>02. Proyectos Seleccionados</h2>
+            
+            <div class="portfolio-grid">
+                
+                <div class="project-card" onclick="location.href='https://youtube.com/tu-video-1';">
+                    <img src="https://via.placeholder.com/400x300/333/eee?text=Laderas+Andes" class="project-image" alt="Rodaje Mendoza">
+                    <strong>Laderas de los Andes</strong>
+                    <div class="tags">[PROD] [LOGISTICA] - Mendoza</div>
+                </div>
+
+                <div class="project-card" onclick="location.href='#';">
+                    <img src="https://via.placeholder.com/400x300/333/eee?text=Corto+Ficcion" class="project-image" alt="Cortometraje">
+                    <strong>Nombre del Corto</strong>
+                    <div class="tags">[GUION] [DIRECCION]</div>
+                </div>
+
+                <div class="project-card" onclick="location.href='#';">
+                    <img src="https://via.placeholder.com/400x300/333/eee?text=Brand+Content" class="project-image" alt="Publicidad">
+                    <strong>Campaña Xiaomi/Poco</strong>
+                    <div class="tags">[CAMARA] [EDICION]</div>
+                </div>
+
+                <div class="project-card" onclick="location.href='#';">
+                    <img src="https://via.placeholder.com/400x300/333/eee?text=Reel+2025" class="project-image" alt="Showreel">
+                    <strong>Showreel 2024-2025</strong>
+                    <div class="tags">[RESUMEN]</div>
+                </div>
+
+            </div>
+        </section>
+
+        <footer>
+            <p>Contacto: <a href="mailto:tuemail@gmail.com">tuemail@gmail.com</a></p>
+            <p>--- FIN DE TRANSMISIÓN ---</p>
+        </footer>
+
+    </div>
+
+</body>
+   </html>
